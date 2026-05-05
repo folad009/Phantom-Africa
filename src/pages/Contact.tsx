@@ -44,7 +44,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 font-medium uppercase tracking-widest text-sm mb-2">Email Us</h3>
-                  <a href="mailto:hello@phantomafrica.com" className="text-xl text-white font-light hover:text-primary transition-colors">hello@phantomafrica.com</a>
+                  <a href="mailto:ufuoma.m@phantomafrica.com" className="text-xl text-white font-light hover:text-primary transition-colors">ufuoma.m@phantomafrica.com</a><br/>
+                  <a href="mailto:contactus@phantomafrica.com" className="text-xl text-white font-light hover:text-primary transition-colors">contactus@phantomafrica.com</a>
+
                 </div>
               </div>
             </Reveal>
@@ -56,7 +58,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-gray-500 font-medium uppercase tracking-widest text-sm mb-2">Call Us</h3>
-                  <a href="tel:+234123456789" className="text-xl text-white font-light hover:text-primary transition-colors">+234 (0) 123 456 789</a>
+                  <a href="tel:+2349125972525" className="text-xl text-white font-light hover:text-primary transition-colors">+234 912 597 2525</a>
                 </div>
               </div>
             </Reveal>

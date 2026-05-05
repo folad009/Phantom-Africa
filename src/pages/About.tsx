@@ -25,13 +25,8 @@ export default function About() {
               <p className="text-lg text-gray-400 font-light leading-relaxed mb-6">
                 We partner with brands to create immersive, impactful experiences that influence perception, drive trial, and inspire loyalty. From concept to execution, we ensure every interaction delivers value.
               </p>
-              <div className="w-full h-px bg-white/10 my-8" />
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                  <span className="font-display font-bold">10+</span>
-                </div>
-                <span className="text-sm font-medium uppercase tracking-widest text-gray-400">Years of Excellence</span>
-              </div>
+              <div className="w-full h-px bg-white/40 my-8" />
+
             </Reveal>
           </div>
         </section>
@@ -85,7 +80,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             {/* Desktop Connecting Line */}
-            <div className="hidden md:block absolute top-[4.5rem] inset-x-12 h-px bg-white/10 z-0" />
+            <div className="hidden md:block absolute top-10 inset-x-12 h-px bg-white/10 z-0" />
 
             {[
               { icon: Lightbulb, title: "Insight-Led Strategy", desc: "We start with deep consumer and market insights to form the foundation." },
@@ -96,7 +91,7 @@ export default function About() {
               <Reveal key={step.title} delay={i * 0.15}>
                 <div className="relative z-10 flex flex-col items-center text-center group">
                   <div className="w-16 h-16 rounded-xl bg-white/5 backdrop-blur-md border border-white/20 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-dark-900 transition-all duration-300">
-                    <span className="absolute -top-3 -left-3 text-sm font-display font-bold text-gray-500 group-hover:text-primary transition-colors">0{i+1}</span>
+                    <span className="absolute top-5 -left-5 text-sm font-display font-bold text-gray-500 group-hover:text-primary transition-colors">0{i+1}</span>
                     <step.icon size={28} />
                   </div>
                   <h3 className="text-xl font-display font-bold uppercase tracking-wide mb-4 group-hover:text-primary transition-colors">{step.title}</h3>

@@ -7,7 +7,7 @@ const SERVICES = [
   {
     icon: Sparkles,
     title: "Experiential Marketing",
-    desc: "From product launches to immersive brand houses, we create physical and digital experiences that build deep connections. We design spaces and moments where consumers don't just see your brand—they live it.",
+    desc: "We conceptualize and execute consumer, trade, and corporate experiences that bring brands to life. From product launches to roadshows and immersive activations, we create moments that connect and convert.",
     theme: {
       cardHover: "hover:bg-primary/5 hover:border-primary/30 hover:shadow-[0_8px_30px_rgb(249,115,22,0.12)]",
       iconGroupHover: "group-hover:rotate-12 group-hover:scale-110 group-hover:bg-primary/20",
@@ -19,7 +19,7 @@ const SERVICES = [
   {
     icon: Gift,
     title: "Consumer & Trade Promotions",
-    desc: "End-to-end management of targeted promotions that drive trial, frequency, and volume. We handle strategy, reward sourcing, legal compliance, and execution.",
+    desc: "We design and manage promotions that drive product trial, increase sales, and reward loyalty. Our campaigns are structured to deliver both short-term impact and long-term brand equity.",
     theme: {
       cardHover: "hover:bg-secondary/5 hover:border-secondary/30 hover:shadow-[0_8px_30px_rgb(37,99,235,0.12)]",
       iconGroupHover: "group-hover:-rotate-12 group-hover:scale-110 group-hover:bg-secondary/20",
@@ -30,8 +30,8 @@ const SERVICES = [
   },
   {
     icon: Store,
-    title: "POSM",
-    desc: "Point of Sale Materials that disrupt the shopper journey. We design, produce, and deploy high-impact collateral that wins at the last mile of purchase.",
+    title: "Point-of-Sale Materials (POSM)",
+    desc: "We develop and supply high-quality POS materials that enhance visibility at the point of purchase and influence buying decisions where it matters most.",
     theme: {
       cardHover: "hover:bg-primary/5 hover:border-primary/30 hover:shadow-[0_8px_30px_rgb(249,115,22,0.12)]",
       iconGroupHover: "group-hover:rotate-12 group-hover:scale-110 group-hover:bg-primary/20",
@@ -43,7 +43,7 @@ const SERVICES = [
   {
     icon: Trophy,
     title: "Trade Incentives & Reward Solutions",
-    desc: "Programs designed to motivate channel partners, distributors, and sales teams. We build tiered reward structures that align with your sales objectives.",
+    desc: "We motivate distributors, retailers, and sales teams through well-structured incentive programs that boost performance and strengthen partnerships.",
     theme: {
       cardHover: "hover:bg-secondary/5 hover:border-secondary/30 hover:shadow-[0_8px_30px_rgb(37,99,235,0.12)]",
       iconGroupHover: "group-hover:-rotate-12 group-hover:scale-110 group-hover:bg-secondary/20",
@@ -55,7 +55,7 @@ const SERVICES = [
   {
     icon: Layers,
     title: "Merchandising Services",
-    desc: "Ensuring optimal visibility and share of shelf. Our trained merchandisers execute planograms perfectly and maintain your brand's physical presence at retail.",
+    desc: "Our merchandising teams ensure your products are visible, available, and properly represented across retail channels—maximizing sales opportunities.",
     theme: {
       cardHover: "hover:bg-primary/5 hover:border-primary/30 hover:shadow-[0_8px_30px_rgb(249,115,22,0.12)]",
       iconGroupHover: "group-hover:rotate-12 group-hover:scale-110 group-hover:bg-primary/20",
@@ -67,7 +67,7 @@ const SERVICES = [
   {
     icon: Users,
     title: "Trade Force Recruitment & Management",
-    desc: "We source, train, and manage dedicated sales and promotional teams. Our rigorous training ensures they represent your brand with the highest standards.",
+    desc: "We recruit, train, deploy, and manage field teams that represent your brand with professionalism and efficiency across Nigeria.",
     theme: {
       cardHover: "hover:bg-secondary/5 hover:border-secondary/30 hover:shadow-[0_8px_30px_rgb(37,99,235,0.12)]",
       iconGroupHover: "group-hover:-rotate-12 group-hover:scale-110 group-hover:bg-secondary/20",
@@ -79,7 +79,7 @@ const SERVICES = [
   {
     icon: Truck,
     title: "Procurement & Supply",
-    desc: "Reliable sourcing of promotional items, event materials, and branded assets. We manage the supply chain to ensure on-time delivery and strict cost control.",
+    desc: "We handle sourcing and supply of materials and assets needed to support marketing campaigns and trade activities—reliably and at scale.",
     theme: {
       cardHover: "hover:bg-primary/5 hover:border-primary/30 hover:shadow-[0_8px_30px_rgb(249,115,22,0.12)]",
       iconGroupHover: "group-hover:rotate-12 group-hover:scale-110 group-hover:bg-primary/20",

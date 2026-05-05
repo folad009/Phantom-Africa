@@ -43,8 +43,8 @@ export function Footer() {
             <h4 className="font-display font-semibold text-white mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
             <ul className="flex flex-col gap-4">
               <li className="text-gray-400 text-sm">Lagos, Nigeria</li>
-              <li><a href="mailto:hello@phantomafrica.com" className="text-gray-400 hover:text-primary transition-colors text-sm">hello@phantomafrica.com</a></li>
-              <li><a href="tel:+234000000000" className="text-gray-400 hover:text-primary transition-colors text-sm">+234 (0) 123 456 789</a></li>
+              <li><a href="mailto:contactus@phantomafrica.com" className="text-gray-400 hover:text-primary transition-colors text-sm">contactus@phantomafrica.com</a></li>
+              <li><a href="tel:+2349125972525" className="text-gray-400 hover:text-primary transition-colors text-sm">+234 912 597 2525</a></li>
             </ul>
           </div>
         </div>
