@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import {
@@ -16,6 +16,25 @@ import {
 import { Reveal } from "../components/ui/Reveal";
 
 export default function Home() {
+  const WHO_WE_ARE_SLIDES = [
+    {
+      src: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      alt: "Excited crowd at an event",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      alt: "Brand event with people networking",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      alt: "Live stage experience and audience",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      alt: "Creative event production setup",
+    },
+  ] as const;
+
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 1000], [0, 300]);
   const opacityBg = useTransform(scrollY, [0, 600], [1, 0]);
@@ -59,6 +78,15 @@ export default function Home() {
 
   const leftColY = useTransform(smoothWhyChooseUsProgress, [0, 1], [0, -80]);
   const rightColY = useTransform(smoothWhyChooseUsProgress, [0, 1], [0, 80]);
+  const [activeWhoWeAreSlide, setActiveWhoWeAreSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveWhoWeAreSlide((prev) => (prev + 1) % WHO_WE_ARE_SLIDES.length);
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, [WHO_WE_ARE_SLIDES.length]);
 
   return (
     <div className="w-full">
@@ -242,12 +270,12 @@ export default function Home() {
               <Reveal delay={0.4}>
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-3 text-secondary font-medium uppercase tracking-wider hover:text-white transition-colors group"
+                  className="inline-flex items-center gap-3 text-blue-100 font-medium uppercase tracking-wider hover:text-white transition-colors group"
                 >
-                  <span className="border-b border-secondary/30 pb-1 group-hover:border-white">
+                  <span className="border-b border-blue-100/30 pb-1 group-hover:border-white">
                     Discover our story
                   </span>
-                  <div className="w-8 h-8 rounded-full border border-secondary flex items-center justify-center group-hover:bg-white group-hover:text-dark-900 group-hover:border-white transition-all">
+                  <div className="w-8 h-8 rounded-full border border-blue-100 flex items-center justify-center group-hover:bg-white group-hover:text-dark-900 group-hover:border-white transition-all">
                     <ArrowRight size={16} />
                   </div>
                 </Link>
@@ -257,18 +285,44 @@ export default function Home() {
             <Reveal delay={0.3} direction="left">
               <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/10 z-10 opacity-60 mix-blend-color" />
-                <motion.img
+                <motion.div
                   style={{ scale: whoWeAreImgScale }}
-                  src="https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-                  alt="Excited crowd at an event"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
-                />
+                  animate={{ x: `-${activeWhoWeAreSlide * 100}%` }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
+                  className="w-full h-full flex"
+                >
+                  {WHO_WE_ARE_SLIDES.map((slide) => (
+                    <img
+                      key={slide.src}
+                      src={slide.src}
+                      alt={slide.alt}
+                      className="w-full h-full object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-1000 ease-out"
+                    />
+                  ))}
+                </motion.div>
                 <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-dark-900 to-transparent z-20">
-                  <div className="inline-flex items-center gap-2 bg-dark-800/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
-                    <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
-                    <span className="text-xs font-semibold uppercase tracking-widest text-white">
-                      Live Execution
-                    </span>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="inline-flex items-center gap-2 bg-dark-800/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                      <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                      <span className="text-xs font-semibold uppercase tracking-widest text-white">
+                        Live Execution
+                      </span>
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-dark-800/80 backdrop-blur-md px-3 py-2 rounded-full border border-white/10">
+                      {WHO_WE_ARE_SLIDES.map((slide, index) => (
+                        <button
+                          key={slide.src}
+                          type="button"
+                          onClick={() => setActiveWhoWeAreSlide(index)}
+                          aria-label={`Show slide ${index + 1}`}
+                          className={`h-2 rounded-full transition-all duration-300 ${
+                            activeWhoWeAreSlide === index
+                              ? "w-6 bg-primary"
+                              : "w-2 bg-white/60 hover:bg-white"
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -434,12 +488,12 @@ export default function Home() {
       {/* 5. OUR IMPACT */}
       <section
         id="impact"
-        className="py-24 bg-primary relative overflow-hidden text-dark-900 border-y border-primary"
+        className="py-24 bg-primary relative overflow-hidden text-white border-y border-primary"
       >
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <Reveal>
-            <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tight text-center mb-16 text-dark-900">
+            <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tight text-center mb-16">
               Our Impact in Numbers
             </h2>
           </Reveal>
@@ -456,7 +510,7 @@ export default function Home() {
                   <span className="text-5xl md:text-7xl font-display font-bold mb-2 tracking-tighter">
                     {stat.num}
                   </span>
-                  <span className="text-sm md:text-base font-bold uppercase tracking-widest text-dark-800">
+                  <span className="text-sm md:text-base font-bold uppercase tracking-widest ">
                     {stat.label}
                   </span>
                 </div>

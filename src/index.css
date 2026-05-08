@@ -8,14 +8,14 @@
   --color-dark-900: #080808;
   --color-dark-800: #121212;
   --color-dark-700: #1a1a1a;
-  --color-primary: #f97316;
-  --color-primary-dark: #ea580c;
-  --color-secondary: #2563eb;
+  --color-primary: #3300ff;
+  --color-primary-dark: #2100a5;
+  --color-secondary: #2100a5;
 }
 
 @layer base {
   body {
-    @apply bg-dark-900 text-gray-200 font-sans antialiased overflow-x-hidden;
+    @apply bg-white text-gray-200 font-sans antialiased overflow-x-hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -40,12 +40,12 @@
 
 @layer utilities {
   .text-glow-primary {
-    text-shadow: 0 0 20px rgba(255, 77, 0, 0.4);
+    text-shadow: 0 0 20px rgba(51, 0, 255, 0.4);
   }
   .text-glow-secondary {
-    text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    text-shadow: 0 0 20px rgba(33, 0, 165, 0.4);
   }
   .bg-glow-primary {
-    box-shadow: 0 0 40px rgba(255, 77, 0, 0.2);
+    box-shadow: 0 0 40px rgba(51, 0, 255, 0.2);
   }
 }
