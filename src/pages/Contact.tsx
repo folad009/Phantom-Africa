@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <div className="w-full pt-32 md:pt-48 pb-24 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-primary/20 to-secondary/20 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <section className="mb-16 md:mb-24">
@@ -65,9 +65,9 @@ export default function Contact() {
             
             {/* Abstract Map Graphic */}
             <Reveal delay={0.5}>
-              <div className="w-full aspect-[2/1] mt-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl relative overflow-hidden flex items-center justify-center group shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+              <div className="w-full aspect-2/1 mt-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl relative overflow-hidden flex items-center justify-center group shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/gridme.png')] opacity-20" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 rounded-full blur-[40px] group-hover:bg-secondary/20 transition-colors duration-700" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors duration-700" />
                 <div className="relative z-10 flex flex-col items-center gap-2 text-primary">
                   <MapPin size={32} className="animate-bounce" />
                   <span className="text-xs font-bold tracking-widest uppercase">Lagos, NG</span>

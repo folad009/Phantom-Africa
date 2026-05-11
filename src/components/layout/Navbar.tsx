@@ -67,14 +67,14 @@ export function Navbar() {
           isScrolled ? "bg-dark-900/80 backdrop-blur-md py-4 border-b border-white/5" : "bg-transparent py-6"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between items-end">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           <Link to="/" className="relative z-50 flex flex-col group">
              <span className="text-2xl font-display font-black tracking-tighter uppercase italic">Phantom Africa</span>
              <span className="text-[10px] tracking-[0.4em] uppercase text-primary font-bold ml-1">Experiential Agency</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] font-medium">
+          <nav className="hidden md:flex items-center gap-8 text-[15px] uppercase tracking-[0.2em] font-medium">
             {NAV_LINKS.map((link) => {
               const isActive = location.pathname === "/" ? activeSection === link.path : location.pathname === link.path;
               return (
@@ -95,7 +95,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="px-6 py-3 border-b border-white/10 text-white font-bold uppercase text-[10px] tracking-widest hover:border-primary hover:text-primary transition-all duration-300"
+              className="px-6 py-3 border-b text-[15px] border-white/10 text-white font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all duration-300"
             >
               Connect
             </Link>

@@ -93,12 +93,14 @@ const SERVICES = [
 export default function Services() {
   return (
     <div className="w-full pt-32 md:pt-48 pb-24">
+      <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-primary/20 to-secondary/20 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <section className="mb-24 text-center">
           <Reveal>
             <span className="text-primary font-medium tracking-widest uppercase text-sm mb-4 block">What We Do</span>
             <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-bold uppercase tracking-tighter leading-[0.9] mb-8">
-              Capabilities & <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Solutions</span>
+              Capabilities & <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">Solutions</span>
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
@@ -114,7 +116,7 @@ export default function Services() {
               <div 
                 className={`bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-3xl flex flex-col md:flex-row gap-8 md:gap-16 items-start group ${service.theme.cardHover} transition-all duration-500`}
               >
-                <div className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl ${service.theme.bgBase} ${service.theme.borderBase} border flex items-center justify-center ${service.theme.iconGroupHover} transition-all duration-500`}>
+                <div className={`shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl ${service.theme.bgBase} ${service.theme.borderBase} border flex items-center justify-center ${service.theme.iconGroupHover} transition-all duration-500`}>
                   <service.icon size={48} className={service.theme.text} />
                 </div>
                 <div className="flex-1">
