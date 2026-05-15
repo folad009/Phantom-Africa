@@ -93,11 +93,11 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center pt-24 overflow-hidden"
+        className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-sky-50 dark:bg-dark-900"
       >
         {/* Video Background */}
         <motion.div
-          className="absolute inset-0 z-0 bg-dark-900 overflow-hidden"
+          className="absolute inset-0 z-0 bg-sky-100 dark:bg-dark-900 overflow-hidden"
           style={{ y: yBg, opacity: opacityBg }}
         >
           <video
@@ -106,7 +106,7 @@ export default function Home() {
             muted
             playsInline
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.18] saturate-[0.35] brightness-110"
           >
             <source
               src="https://cdn.coverr.co/videos/coverr-rave-party-in-a-club-5182/1080p.mp4"
@@ -114,36 +114,35 @@ export default function Home() {
             />
           </video>
 
-          <div className="absolute inset-0 bg-linear-to-r from-dark-900 via-dark-900/60 to-transparent" />
-          <div className="absolute inset-0 bg-linear-to-b from-dark-900/40 via-transparent to-dark-900" />
+          <div className="absolute inset-0 bg-sky-100/85 dark:bg-dark-900/90" />
+          <div className="absolute inset-0 bg-linear-to-r from-sky-100/95 via-sky-50/90 to-sky-100/40 dark:from-dark-900/90 dark:via-dark-900/85 dark:to-dark-900/40" />
+          <div className="absolute inset-0 bg-linear-to-br from-primary/25 via-sky-100/70 to-white dark:from-primary/30 dark:via-dark-900/80 dark:to-dark-900" />
+          <div className="absolute inset-0 bg-linear-to-b from-sky-200/30 via-transparent to-white dark:from-dark-800/40 dark:via-transparent dark:to-dark-900" />
 
-          <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] md:w-[40vw] md:h-[40vw] bg-primary-dark rounded-full blur-[120px] opacity-20 mix-blend-screen animate-pulse pointer-events-none" />
+          <motion.div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] md:w-[40vw] md:h-[40vw] bg-primary rounded-full blur-[120px] opacity-35 pointer-events-none animate-pulse" />
           <div
-            className="absolute bottom-[-10%] left-[-5%] w-[60vw] h-[60vw] md:w-[50vw] md:h-[50vw] bg-secondary rounded-full blur-[150px] opacity-10 mix-blend-screen pointer-events-none"
+            className="absolute bottom-[-10%] left-[-5%] w-[60vw] h-[60vw] md:w-[50vw] md:h-[50vw] bg-sky-400 rounded-full blur-[150px] opacity-25 pointer-events-none"
             style={{ animation: "pulse 8s infinite alternate-reverse" }}
           />
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.06] pointer-events-none" />
         </motion.div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <Reveal delay={0.1}>
-              <div className="mb-6 inline-flex items-center gap-3">
+              <div className="mb-6 inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/25">
                 <span className="h-px w-12 bg-primary"></span>
-                <span className="text-xs uppercase tracking-widest text-primary font-bold">
+                <span className="text-xs uppercase tracking-widest text-primary-dark font-bold">
                   Built for the African Market
                 </span>
               </div>
             </Reveal>
 
             <Reveal delay={0.2} direction="up">
-              <h1 className="text-5xl md:text-[80px] leading-[0.85] font-display font-black uppercase tracking-tighter mb-6">
+              <h1 className="text-5xl md:text-[80px] leading-[0.85] font-display font-black uppercase tracking-tighter mb-6 text-slate-900 dark:text-white">
                 Creating{" "}
-                <span
-                  className="text-transparent  px-1 my-5"
-                  style={{ WebkitTextStroke: "1px white" }}
-                >
+                <span className="text-primary px-1 my-5">
                   Experiences
                 </span>{" "}
                 <br />
@@ -152,7 +151,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.3} direction="up">
-              <p className="text-lg md:text-xl text-gray-400 max-w-lg mb-10 font-sans font-light leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-lg mb-10 font-sans font-light leading-relaxed">
                 Phantom Africa is a leading experiential marketing agency
                 delivering high-impact brand activations across Nigeria. We
                 build lasting connections between brands and people.
@@ -163,14 +162,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-8 py-4 bg-primary-dark text-white font-bold uppercase text-xs tracking-widest hover:bg-primary transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold uppercase text-xs tracking-widest hover:bg-primary-dark transition-all flex items-center justify-center gap-2"
                 >
                   Work With Us
                   <ArrowRight size={16} />
                 </Link>
                 <Link
                   to="/services"
-                  className="w-full sm:w-auto px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold uppercase text-xs tracking-widest hover:bg-white/10 transition-all flex items-center justify-center"
+                  className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-dark-800 border-2 border-primary/30 text-primary-dark font-bold uppercase text-xs tracking-widest hover:bg-primary/5 dark:hover:bg-primary/10 hover:border-primary transition-all flex items-center justify-center shadow-sm"
                 >
                   View Our Projects
                 </Link>
@@ -181,8 +180,8 @@ export default function Home() {
           {/* Right Column: Immersive Card */}
           <div className="lg:col-span-5 flex items-center justify-end relative mt-12 lg:mt-0">
             <Reveal delay={0.5} direction="left" className="w-full">
-              <div className="w-full aspect-4/5 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-linear-to-br from-primary-dark/20 to-transparent opacity-50">
+              <div className="w-full aspect-4/5 bg-white dark:bg-dark-800 border-2 border-primary/25 dark:border-primary/20 rounded-3xl p-8 relative overflow-hidden group shadow-[0_24px_60px_rgba(14,165,233,0.18)] dark:shadow-[0_24px_60px_rgba(14,165,233,0.08)] ring-4 ring-primary/10">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/15 via-sky-50/60 dark:via-dark-800/60 to-transparent">
                   <img
                     src="/assets/images/phantom-africa-image1.png"
                     alt="Immersive Experience"
@@ -193,10 +192,10 @@ export default function Home() {
             </Reveal>
             {/* Decorative African Pattern Stripe */}
             <div
-              className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-1/2 opacity-20 bg-repeat-y pointer-events-none"
+              className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-1/2 opacity-45 bg-repeat-y pointer-events-none"
               style={{
                 backgroundImage:
-                  "radial-gradient(circle, #f97316 2px, transparent 2px)",
+                  "radial-gradient(circle, #0ea5e9 2px, transparent 2px)",
                 backgroundSize: "8px 8px",
               }}
             ></div>
@@ -210,10 +209,10 @@ export default function Home() {
           transition={{ delay: 1, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-xs uppercase tracking-widest text-gray-500 font-display">
+          <span className="text-xs uppercase tracking-widest text-primary font-display font-semibold">
             Scroll
           </span>
-          <div className="w-px h-12 bg-linear-to-b from-gray-500 to-transparent" />
+          <div className="w-px h-12 bg-linear-to-b from-primary to-transparent" />
         </motion.div>
       </section>
 
@@ -221,28 +220,28 @@ export default function Home() {
       <section
         id="about"
         ref={whoWeAreRef}
-        className="py-24 md:py-40 bg-blue-50 relative border-t border-white/5 overflow-hidden"
+        className="py-24 md:py-40 bg-sky-50 dark:bg-dark-900 relative border-t border-slate-200 dark:border-white/10 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <motion.div style={{ y: whoWeAreTextY }}>
               <Reveal delay={0}>
                 <h2 className="text-4xl text-primary md:text-6xl font-display font-bold uppercase tracking-tight mb-8">
-                  Who <span className="text-gray-600">We Are</span>
+                  Who <span className="text-gray-600 dark:text-gray-400">We Are</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.1}>
                 <div className="w-16 h-1 mb-8 bg-linear-to-r from-primary to-transparent" />
               </Reveal>
               <Reveal delay={0.2}>
-                <p className="text-xl text-gray-900  font-light leading-relaxed mb-8">
+                <p className="text-xl text-gray-900 dark:text-white font-light leading-relaxed mb-8">
                   Phantom Africa combines creativity, strategy, and execution to
                   transform how brands engage with consumers, trade partners,
                   and corporate stakeholders.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
-                <p className="text-lg text-gray-600 font-light leading-relaxed mb-10">
+                <p className="text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed mb-10">
                   With a strong national footprint and deep local market
                   understanding, we deliver experiences that are not just
                   seen—but felt and remembered.
@@ -256,7 +255,7 @@ export default function Home() {
                   <span className="border-b border-blue-100/30 pb-1 group-hover:border-primary-dark">
                     Discover our story
                   </span>
-                  <div className="w-8 h-8 rounded-full border border-primary-dark flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-white transition-all">
+                  <div className="w-8 h-8 rounded-full border border-primary-dark flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
                     <ArrowRight size={16} />
                   </div>
                 </Link>
@@ -281,9 +280,9 @@ export default function Home() {
                     />
                   ))}
                 </motion.div>
-                <div className="absolute inset-x-0 bottom-0 p-8 bg-linear-to-t from-dark-900 to-transparent z-20">
+                <div className="absolute inset-x-0 bottom-0 p-8 bg-linear-to-t from-white/90 dark:from-dark-900/90 to-transparent z-20">
                   <div className="flex items-center justify-between gap-4">
-                    <div className="inline-flex items-center gap-2 bg-dark-800/80 backdrop-blur-md px-3 py-2 rounded-full border border-white/10">
+                    <div className="inline-flex items-center gap-2 bg-white/90 dark:bg-dark-800/90 backdrop-blur-md px-3 py-2 rounded-full border border-slate-200 dark:border-white/10 shadow-sm">
                       {WHO_WE_ARE_SLIDES.map((slide, index) => (
                         <button
                           key={slide.src}
@@ -293,7 +292,7 @@ export default function Home() {
                           className={`h-2 rounded-full transition-all duration-300 ${
                             activeWhoWeAreSlide === index
                               ? "w-6 bg-primary"
-                              : "w-2 bg-white/60 hover:bg-white"
+                              : "w-2 bg-slate-300 hover:bg-primary"
                           }`}
                         />
                       ))}
@@ -321,11 +320,11 @@ export default function Home() {
             <div className="max-w-2xl">
               <Reveal>
                 <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-6">
-                  What <span className="text-gray-600">We Do</span>
+                  What <span className="text-gray-600 dark:text-gray-400">We Do</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.1}>
-                <p className="text-xl text-gray-400 font-light">
+                <p className="text-xl text-slate-600 dark:text-gray-400 font-light">
                   Strategic interventions designed to drive engagement,
                   visibility, and measurable growth.
                 </p>
@@ -334,7 +333,7 @@ export default function Home() {
             <Reveal delay={0.2} direction="left">
               <Link
                 to="/services"
-                className="px-6 py-4 border border-white/20 hover:bg-white/5 transition-colors uppercase tracking-[0.2em] text-[10px] font-bold inline-flex items-center gap-2"
+                className="px-6 py-4 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300 hover:bg-sky-50 dark:hover:bg-dark-800 transition-colors uppercase tracking-[0.2em] text-[10px] font-bold inline-flex items-center gap-2"
               >
                 All Services <ArrowRight size={14} />
               </Link>
@@ -367,18 +366,18 @@ export default function Home() {
               <Reveal key={service.title} delay={i * 0.1}>
                 <motion.div
                   whileHover={{ y: -2 }}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl h-full flex flex-col group transition-colors duration-500 hover:border-primary/50 shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+                  className="bg-white dark:bg-dark-800 border border-slate-200 dark:border-white/10 p-8 rounded-2xl h-full flex flex-col group transition-colors duration-500 hover:border-primary/50 shadow-[0_8px_30px_rgb(14,165,233,0.08)]"
                 >
-                  <div className="w-14 h-14 bg-dark-800 rounded-xl flex items-center justify-center mb-8 border border-white/5 group-hover:scale-110 group-hover:bg-primary/20 group-hover:text-primary transition-all duration-300">
+                  <div className="w-14 h-14 bg-sky-50 dark:bg-dark-900 rounded-xl flex items-center justify-center mb-8 border border-slate-200 dark:border-white/10 group-hover:scale-110 group-hover:bg-primary/20 group-hover:text-primary transition-all duration-300">
                     <service.icon
                       size={28}
-                      className="text-gray-400 group-hover:text-primary transition-colors"
+                      className="text-slate-500 dark:text-gray-400 group-hover:text-primary transition-colors"
                     />
                   </div>
-                  <h3 className="text-xl font-display font-bold uppercase tracking-wide mb-4 text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-display font-bold uppercase tracking-wide mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-500 font-light text-sm mt-auto">
+                  <p className="text-slate-600 dark:text-gray-400 font-light text-sm mt-auto">
                     {service.desc}
                   </p>
                 </motion.div>
@@ -392,17 +391,17 @@ export default function Home() {
       <section
         id="why"
         ref={whyChooseUsRef}
-        className="py-24 md:py-40 relative bg-blue-50 border-t border-white/5 overflow-hidden"
+        className="py-24 md:py-40 relative bg-sky-50 dark:bg-dark-900 border-t border-slate-200 dark:border-white/10 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-20">
             <Reveal>
               <h2 className="text-4xl md:text-6xl font-display text-primary-dark font-bold uppercase tracking-tight mb-6">
-                Why <span className="text-gray-900">Choose Us</span>
+                Why <span className="text-gray-900 dark:text-white">Choose Us</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="text-xl text-gray-900 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-gray-900 dark:text-gray-300 max-w-2xl mx-auto font-light">
                 We combine national reach with local expertise to deliver
                 flawless execution.
               </p>
@@ -448,7 +447,7 @@ export default function Home() {
                       <h3 className="text-primary-dark text-xl md:text-2xl font-display font-bold uppercase tracking-wide mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-gray-900 font-light leading-relaxed">
+                      <p className="text-gray-900 dark:text-gray-300 font-light leading-relaxed">
                         {feature.desc}
                       </p>
                     </div>
@@ -498,14 +497,14 @@ export default function Home() {
       {/* 6. FINAL CTA */}
       <section
         id="contact"
-        className="py-32 md:py-48 relative text-center text-white overflow-hidden"
+        className="py-32 md:py-48 relative text-center overflow-hidden"
         style={{
           backgroundImage: `url('/assets/images/phantom-africa-image1.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-dark-900/60 backdrop-blur-sm pointer-events-none" />
+        <div className="absolute inset-0 bg-white/85 dark:bg-dark-900/90 backdrop-blur-sm pointer-events-none" />
           {/* Subtle background glow */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-secondary/10 rounded-full blur-[100px]" />
@@ -513,13 +512,13 @@ export default function Home() {
 
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
             <Reveal>
-              <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-bold uppercase tracking-tighter leading-[0.9] mb-8">
+              <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-bold uppercase tracking-tighter leading-[0.9] mb-8 text-slate-900 dark:text-white">
                 Let's Build Something{" "}
-                <span className="text-blue-100">Impactful</span>
+                <span className="text-primary">Impactful</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="text-xl md:text-2xl text-white font-light mb-12 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-gray-400 font-light mb-12 max-w-2xl mx-auto">
                 Ready to take your brand to the next level? Partner with Phantom
                 Africa to create experiences that deliver real results.
               </p>
@@ -528,13 +527,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-10 py-5 bg-white text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-gray-200 transition-all duration-300"
+                  className="w-full sm:w-auto px-10 py-5 bg-primary text-white font-bold uppercase tracking-widest text-xs hover:bg-primary-dark transition-all duration-300"
                 >
                   Start a Project
                 </Link>
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-10 py-5 border border-white/20 text-white font-bold uppercase tracking-widest text-xs hover:bg-white/10 transition-all duration-300"
+                  className="w-full sm:w-auto px-10 py-5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300 font-bold uppercase tracking-widest text-xs hover:bg-sky-50 dark:hover:bg-dark-800 transition-all duration-300"
                 >
                   Contact Us
                 </Link>

@@ -1,51 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
-  --color-dark-900: #080808;
-  --color-dark-800: #121212;
-  --color-dark-700: #1a1a1a;
-  --color-primary: #3300ff;
-  --color-primary-dark: #2100a5;
-  --color-secondary: #2100a5;
+  --color-dark-900: #0f172a;
+  --color-dark-800: #1e293b;
+  --color-dark-700: #334155;
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0284c7;
+  --color-secondary: #0369a1;
+  --color-surface: var(--app-surface);
+  --color-surface-elevated: var(--app-surface-elevated);
+  --color-foreground: var(--app-foreground);
+  --color-muted: var(--app-muted);
+  --color-border: var(--app-border);
+  --color-section: var(--app-section);
+}
+
+:root {
+  --app-surface: #f8fafc;
+  --app-surface-elevated: #ffffff;
+  --app-foreground: #0f172a;
+  --app-muted: #475569;
+  --app-border: #e2e8f0;
+  --app-section: #f0f9ff;
+}
+
+.dark {
+  --app-surface: #0f172a;
+  --app-surface-elevated: #1e293b;
+  --app-foreground: #f8fafc;
+  --app-muted: #94a3b8;
+  --app-border: rgba(255, 255, 255, 0.1);
+  --app-section: #0c1929;
 }
 
 @layer base {
   body {
-    @apply bg-white text-gray-200 font-sans antialiased overflow-x-hidden;
+    @apply bg-surface text-muted font-sans antialiased overflow-x-hidden transition-colors duration-300;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-white tracking-tight;
+    @apply font-display text-foreground tracking-tight;
   }
-  
+
   ::selection {
-    @apply bg-primary/30 text-white;
+    @apply bg-primary/25 text-foreground;
   }
-  
-  /* Custom scrollbar */
+
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-dark-900;
+    @apply bg-slate-100 dark:bg-dark-800;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-dark-700 rounded-full hover:bg-gray-700 transition-colors;
+    @apply bg-slate-300 dark:bg-dark-700 rounded-full hover:bg-primary/50 transition-colors;
   }
 }
 
 @layer utilities {
   .text-glow-primary {
-    text-shadow: 0 0 20px rgba(51, 0, 255, 0.4);
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.35);
   }
   .text-glow-secondary {
-    text-shadow: 0 0 20px rgba(33, 0, 165, 0.4);
+    text-shadow: 0 0 20px rgba(3, 105, 161, 0.3);
   }
   .bg-glow-primary {
-    box-shadow: 0 0 40px rgba(51, 0, 255, 0.2);
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.15);
   }
 }
